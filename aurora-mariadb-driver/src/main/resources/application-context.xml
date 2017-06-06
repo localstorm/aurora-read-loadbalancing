@@ -12,7 +12,7 @@
     <!-- Commons dbcp -->
     <bean id="dbcpMultipurposeDataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="org.mariadb.jdbc.Driver"/>
-        <property name="url"             value="#{systemProperties['jdbc.url']}/#{systemProperties['jdbc.database']}?connectTimeout=#{systemProperties['jdbc.connectTimeout']}&amp;validConnectionTimeout=#{systemProperties['jdbc.validConnectionTimeout']}&amp;socketTimeout=#{systemProperties['jdbc.socketTimeout']}&amp;failoverLoopRetries=#{systemProperties['jdbc.failoverLoopRetries']}&amp;loadBalanceBlacklistTimeout=#{systemProperties['jdbc.loadBalanceBlacklistTimeout']}&amp;autoReconnect=#{systemProperties['jdbc.autoReconnect']}"/>
+        <property name="url"             value="#{systemProperties['jdbc.url']}?connectTimeout=#{systemProperties['jdbc.connectTimeout']}&amp;validConnectionTimeout=#{systemProperties['jdbc.validConnectionTimeout']}&amp;socketTimeout=#{systemProperties['jdbc.socketTimeout']}&amp;failoverLoopRetries=#{systemProperties['jdbc.failoverLoopRetries']}&amp;loadBalanceBlacklistTimeout=#{systemProperties['jdbc.loadBalanceBlacklistTimeout']}&amp;autoReconnect=#{systemProperties['jdbc.autoReconnect']}"/>
         <property name="username"        value="#{systemProperties['jdbc.username']}"/>
         <property name="password"        value="#{systemProperties['jdbc.password']}"/>
         <property name="initialSize"     value="150" />
@@ -24,7 +24,7 @@
 
     <bean id="dbcpReadOnlyDataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="org.mariadb.jdbc.Driver"/>
-        <property name="url"             value="#{systemProperties['jdbc.url']}/#{systemProperties['jdbc.database']}?connectTimeout=#{systemProperties['jdbc.connectTimeout']}&amp;validConnectionTimeout=#{systemProperties['jdbc.validConnectionTimeout']}&amp;socketTimeout=#{systemProperties['jdbc.socketTimeout']}&amp;failoverLoopRetries=#{systemProperties['jdbc.failoverLoopRetries']}&amp;loadBalanceBlacklistTimeout=#{systemProperties['jdbc.loadBalanceBlacklistTimeout']}&amp;autoReconnect=#{systemProperties['jdbc.autoReconnect']}"/>
+        <property name="url"             value="#{systemProperties['jdbc.url']}?connectTimeout=#{systemProperties['jdbc.connectTimeout']}&amp;validConnectionTimeout=#{systemProperties['jdbc.validConnectionTimeout']}&amp;socketTimeout=#{systemProperties['jdbc.socketTimeout']}&amp;failoverLoopRetries=#{systemProperties['jdbc.failoverLoopRetries']}&amp;loadBalanceBlacklistTimeout=#{systemProperties['jdbc.loadBalanceBlacklistTimeout']}&amp;autoReconnect=#{systemProperties['jdbc.autoReconnect']}"/>
         <property name="username"        value="#{systemProperties['jdbc.username']}"/>
         <property name="password"        value="#{systemProperties['jdbc.password']}"/>
         <property name="defaultReadOnly" value="true"/>
@@ -39,7 +39,7 @@
     <!-- C3p0 -->
     <bean id="c3p0ReadOnlyDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
         <property name="driverClass"     value="org.mariadb.jdbc.Driver"/>
-        <property name="jdbcUrl"         value="#{systemProperties['jdbc.url']}/#{systemProperties['jdbc.database']}?connectTimeout=#{systemProperties['jdbc.connectTimeout']}&amp;validConnectionTimeout=#{systemProperties['jdbc.validConnectionTimeout']}&amp;socketTimeout=#{systemProperties['jdbc.socketTimeout']}&amp;failoverLoopRetries=#{systemProperties['jdbc.failoverLoopRetries']}&amp;loadBalanceBlacklistTimeout=#{systemProperties['jdbc.loadBalanceBlacklistTimeout']}&amp;autoReconnect=#{systemProperties['jdbc.autoReconnect']}"/>
+        <property name="jdbcUrl"         value="#{systemProperties['jdbc.url']}?connectTimeout=#{systemProperties['jdbc.connectTimeout']}&amp;validConnectionTimeout=#{systemProperties['jdbc.validConnectionTimeout']}&amp;socketTimeout=#{systemProperties['jdbc.socketTimeout']}&amp;failoverLoopRetries=#{systemProperties['jdbc.failoverLoopRetries']}&amp;loadBalanceBlacklistTimeout=#{systemProperties['jdbc.loadBalanceBlacklistTimeout']}&amp;autoReconnect=#{systemProperties['jdbc.autoReconnect']}"/>
         <property name="user"            value="#{systemProperties['jdbc.username']}"/>
         <property name="password"        value="#{systemProperties['jdbc.password']}"/>
         <!-- C3P0 has its own way to set parameters for connection: ConnectionCustomizers! -->
@@ -54,7 +54,7 @@
 
     <bean id="c3p0RWDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
         <property name="driverClass"     value="org.mariadb.jdbc.Driver"/>
-        <property name="jdbcUrl"         value="#{systemProperties['jdbc.url']}/#{systemProperties['jdbc.database']}?connectTimeout=#{systemProperties['jdbc.connectTimeout']}&amp;validConnectionTimeout=#{systemProperties['jdbc.validConnectionTimeout']}&amp;socketTimeout=#{systemProperties['jdbc.socketTimeout']}&amp;failoverLoopRetries=#{systemProperties['jdbc.failoverLoopRetries']}&amp;loadBalanceBlacklistTimeout=#{systemProperties['jdbc.loadBalanceBlacklistTimeout']}&amp;autoReconnect=#{systemProperties['jdbc.autoReconnect']}"/>
+        <property name="jdbcUrl"         value="#{systemProperties['jdbc.url']}?connectTimeout=#{systemProperties['jdbc.connectTimeout']}&amp;validConnectionTimeout=#{systemProperties['jdbc.validConnectionTimeout']}&amp;socketTimeout=#{systemProperties['jdbc.socketTimeout']}&amp;failoverLoopRetries=#{systemProperties['jdbc.failoverLoopRetries']}&amp;loadBalanceBlacklistTimeout=#{systemProperties['jdbc.loadBalanceBlacklistTimeout']}&amp;autoReconnect=#{systemProperties['jdbc.autoReconnect']}"/>
         <property name="user"            value="#{systemProperties['jdbc.username']}"/>
         <property name="password"        value="#{systemProperties['jdbc.password']}"/>
         <property name="preferredTestQuery" value="SELECT 1" />
@@ -78,7 +78,7 @@
         <property name="poolName"                  value="multiPurposePool" />
         <property name="connectionTestQuery"       value="SELECT 1" />
         <property name="driverClassName"           value="org.mariadb.jdbc.Driver" />
-        <property name="jdbcUrl"                   value="#{systemProperties['jdbc.url']}/#{systemProperties['jdbc.database']}?connectTimeout=#{systemProperties['jdbc.connectTimeout']}&amp;validConnectionTimeout=#{systemProperties['jdbc.validConnectionTimeout']}&amp;socketTimeout=#{systemProperties['jdbc.socketTimeout']}&amp;failoverLoopRetries=#{systemProperties['jdbc.failoverLoopRetries']}&amp;loadBalanceBlacklistTimeout=#{systemProperties['jdbc.loadBalanceBlacklistTimeout']}&amp;autoReconnect=#{systemProperties['jdbc.autoReconnect']}"/>
+        <property name="jdbcUrl"                   value="#{systemProperties['jdbc.url']}?connectTimeout=#{systemProperties['jdbc.connectTimeout']}&amp;validConnectionTimeout=#{systemProperties['jdbc.validConnectionTimeout']}&amp;socketTimeout=#{systemProperties['jdbc.socketTimeout']}&amp;failoverLoopRetries=#{systemProperties['jdbc.failoverLoopRetries']}&amp;loadBalanceBlacklistTimeout=#{systemProperties['jdbc.loadBalanceBlacklistTimeout']}&amp;autoReconnect=#{systemProperties['jdbc.autoReconnect']}"/>
         <property name="maximumPoolSize"           value="150" />
         <property name="maxLifetime"               value="10000" />
         <property name="connectionTimeout"         value="60000"/>

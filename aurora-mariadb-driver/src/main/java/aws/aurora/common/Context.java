@@ -38,27 +38,11 @@ public class Context {
     }
 
     private static void setDatabase() {
-        String dbName = System.getProperty("jdbc.database");
         String url = System.getProperty("jdbc.url");
-        verifyPropertiesForDatabaseSetup(dbName, url);
-
-        try (Connection conn = DriverManager.getConnection(url, System.getProperty("jdbc.username"), System.getProperty("jdbc.password"))){
-            conn.setCatalog(dbName);
-            Statement statement = conn.createStatement();
-            statement.executeQuery("CREATE TABLE IF NOT EXISTS entries" +
-                    " (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY," +
-                    " time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP)");
-            statement.close();
-        } catch (SQLException e) {
-            System.err.println("SQL exception: " + e.getErrorCode() + " | " + e.getMessage());
-        }
+        verifyPropertiesForDatabaseSetup(url);
     }
 
-    private static void verifyPropertiesForDatabaseSetup(String dbName, String url) {
-        if (StringUtils.isEmpty(dbName)) {
-            throw new IllegalArgumentException("No database has been defined in the jdbc.properties file.");
-        }
-
+    private static void verifyPropertiesForDatabaseSetup(String url) {
         if (url.equals("jdbc:mysql:aurora://")) {
             throw new IllegalArgumentException("No URL has been defined in the jdbc.properties file.");
         }

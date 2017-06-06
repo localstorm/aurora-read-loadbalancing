@@ -12,5 +12,5 @@ Explicit example uses writable connection pool, but sets setReadOnly() for each 
 
 Implicit example doesn't use setReadOnly() in the application, but configures connections to be read-only on conenction-pool side.
 
-
+Applications are printing which instances of Aurora cluster they hit and how many times.
 

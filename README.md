@@ -14,3 +14,4 @@ Implicit example doesn't use setReadOnly() in the application, but configures co
 
 Applications are printing which instances of Aurora cluster they hit and how many times.
 
+Applications are not altering any data, the select @@aurora_server_id value to find which server they are talking to.
